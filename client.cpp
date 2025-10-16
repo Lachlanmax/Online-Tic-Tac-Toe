@@ -1,3 +1,4 @@
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include "client.h"
 
 Client::Client() : connectSocket(INVALID_SOCKET), isPlayerX(false) {
@@ -48,8 +49,6 @@ bool Client::connect(const std::string& serverIP, int port) {
 }
 
 void Client::play() {
-    char buffer[BUFFER_SIZE];
-
     std::cout << "\nGame started! Positions are numbered 0-8:\n";
     std::cout << "0 | 1 | 2\n---------\n3 | 4 | 5\n---------\n6 | 7 | 8\n" << std::endl;
 

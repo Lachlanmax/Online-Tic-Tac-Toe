@@ -1,3 +1,4 @@
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include "server.h"
 
 Server::Server() : serverSocket(INVALID_SOCKET), clientSocket1(INVALID_SOCKET), 
@@ -78,6 +79,9 @@ void Server::start() {
 
     std::cout << "Game started!\n" << std::endl;
     game.printBoard();
+
+    // Send initial board state to both players
+    sendBoardToClients();
 
     handleClients();
 }
