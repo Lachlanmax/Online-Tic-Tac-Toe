@@ -12,22 +12,19 @@ A multiplayer Tic Tac Toe game implemented in C++ with TCP/IP networking for LAN
 
 ## Building
 
-### Using CMake (Recommended)
+### Using Visual Studio
 
-```bash
-mkdir build
-cd build
-cmake ..
-cmake --build .
-```
+1. **Open the Solution**
+   - Open `OnlineTicTacToe.sln` in Visual Studio
+   - The project is configured for Visual Studio 2022 with v143 toolset
 
-The executable `tictactoe.exe` will be created in the build directory.
+2. **Build the Project**
+   - Press `Ctrl + Shift + B` or go to Build → Build Solution
+   - The executable will be created in the `x64\Debug\` or `x64\Release\` folder
 
-### Using Visual Studio Compiler (cl.exe)
-
-```bash
-cl /EHsc main.cpp game.cpp server.cpp client.cpp /link ws2_32.lib
-```
+3. **Run the Project**
+   - Press `Ctrl + F5` to run without debugging
+   - Or `F5` to run with debugging
 
 ## How to Play
 
@@ -67,9 +64,11 @@ cl /EHsc main.cpp game.cpp server.cpp client.cpp /link ws2_32.lib
 - **server.h/server.cpp**: Server implementation that handles two client connections and game flow
 - **client.h/client.cpp**: Client implementation that connects to server and handles user input
 - **main.cpp**: Entry point with menu for choosing server or client mode
+- **OnlineTicTacToe.sln**: Visual Studio solution file
+- **OnlineTicTacToe.vcxproj**: Visual Studio project file
 
 ## Requirements
 
 - Windows OS (uses Winsock2)
-- C++ compiler supporting C++17
-- CMake 3.10+ (for building)
+- Visual Studio 2022 or later
+- C++17 language support
